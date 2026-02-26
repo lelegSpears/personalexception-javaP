@@ -18,15 +18,17 @@ public class Program {
 			System.out.printf(" %s tem %d anos.\n", pessoa.getName(), pessoa.getIdade());
 		}
 		catch (DomainException e) { // Exceção de regras de negócio
-			System.out.print(e.getMessage());
+			System.out.print("Erro:" + e.getMessage());
 		}
 		catch (InputMismatchException e) { // Exceção de Entrada para idade;
-			System.out.print("Deu ruim");
+			System.out.print("Entrada inválida"); // Pode devolver "Null" então a mensagem ajuda;
+			e.printStackTrace(); // Log técnico
 		}
 		finally { // Geralmente usado para limpeza tecnica
 			System.out.print("\nPrograma Finalizado.");
 		}
 	}
 }
+
 
 
